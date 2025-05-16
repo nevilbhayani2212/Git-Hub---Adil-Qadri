@@ -3026,4 +3026,5 @@ def get_top_selling_products(db: Session = Depends(get_db)):
     
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=10000, reload=True)
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
